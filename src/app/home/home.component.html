@@ -1,6 +1,7 @@
 <p class="fs-1">{{ title }}</p>
-<button class="btn btn-primary"
-    (click)="changeTitle($event)"
->
-    change the title
+<button class="btn btn-primary" (click)="changeTitle($event)">
+  change the title
 </button>
+
+<!-- fetching result -->
+<p class="fs-3">{{ result | json }}</p>
