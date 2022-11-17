@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class CallApiService {
+export class UserService {
+  apiUrl = 'http://localhost:8000/user/test/reg'
   constructor(private http: HttpClient) {}
 
-  public getJSONPH(): Observable<any> {
-    return this.http.get<any>('https://jsonplaceholder.typicode.com/todos/1');
+  userRegister(user: any) : Observable<any> {
+    return this.http.post(this.apiUrl, user);
   }
-
 }

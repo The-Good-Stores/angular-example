@@ -8,14 +8,15 @@ import { CallApiService } from '../services/call-api.service';
 })
 export class HomeComponent implements OnInit {
   title: string = 'Hello world!';
-  result: any  = null;
+  result: any = null;
   constructor(private apiService: CallApiService) {}
 
   ngOnInit(): void {}
 
- changeTitle($event: Event) {
-    this.result = this.apiService.getJSONPH()
-    .subscribe(result => this.result = result)
+  changeTitle($event: Event) {
+    this.result = this.apiService
+      .getJSONPH()
+      .subscribe((result) => (this.result = result));
     console.log(this.result);
     this.title = 'show fetching result!';
   }
